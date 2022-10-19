@@ -1,0 +1,10 @@
+.verde{
+    color: green;
+}
+.rosso{
+    color: red;
+}
+.stop{
+    text-transform: uppercase;
+    color: red;
+}
