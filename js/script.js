@@ -9,7 +9,8 @@ let nonInclusi = [];
 let ris = document.getElementById('risultato');
 const ris1 = document.getElementById('risultato1');
 const ris2 = document.getElementById('risultato2');
-const stop = document.getElementById('stop')
+const stop = document.getElementById('stop');
+const btnrigioca = document.getElementById('rigioca');
 
 function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;
@@ -28,7 +29,8 @@ function clear (){
 }
 setTimeout(clear , 3000)
 function inserisci(){
-    let check = false
+
+
     let NumUtente = numUtenteHtml.value;
 if(numeriUtenteInseriti.length == numeri.length){
     stop.innerText = 'Hai inserito tutti i numeri disponibili.'
@@ -36,28 +38,25 @@ if(numeriUtenteInseriti.length == numeri.length){
 }else{
     numeriUtenteInseriti.push(NumUtente);
 }
+let check = false
 for(let i = 0; i < numeri.length; i++){
     if( NumUtente == numeri[i]){
         pHtml.innerHTML = 'Incluso'
-       // pHtml.classList.add('verde')
-        //numeriInclusi.push(NumUtente);
+        pHtml.classList.add('verde')
         check = true
-       // console.log(check)
         
     }else{
         pHtml.innerHTML = 'Non incluso'
         pHtml.classList.add('rosso')
         pHtml.classList.remove('verde')
-       // nonInclusi.push(NumUtente);
         check = false;
-       // console.log(check)
     }
 
 
 
 }
 
-if(check == true){
+if(check){
     numeriInclusi.push(NumUtente)
 }else{
     nonInclusi.push(NumUtente)
@@ -70,8 +69,13 @@ risultato.innerHTML = numeriUtenteInseriti
 ris1.innerHTML = numeriInclusi;
 ris1.classList.add('verde')
 ris2.innerHTML = nonInclusi;
+
 ris2.classList.add('rosso')
 //console.log(numeriUtenteInseriti)
 
 }
 btn.addEventListener('click', inserisci)
+btnrigioca.addEventListener('click', function rigioca(){
+    window.location.reload()
+
+})

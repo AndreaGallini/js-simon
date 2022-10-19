@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Simon Says</title>
 </head>
-<body>
-    <p id="numeriRandomici"></p>
-    <input type="number" placeholder="Inserisci i numeri che ti ricordi" id="numeriUtente">
-    <button id="send">Send</button>
+<body class="container-md d-flex flex-column align-items-center">
+    <h1 class="my-margin">Simon Says</h1>
+    <p>Ricordati i numeri hai 3 secondi, vediamo se ci riesci?</p>
+    <p class="my-font" id="numeriRandomici"></p>
+    <input class="my-input" type="number" placeholder="Inserisci i numeri che ti ricordi" id="numeriUtente">
+    <button class="my-margin btn btn-primary" id="send">Prova</button>
+    <button class="my-margin btn btn-secondary" id="rigioca">Rigioca</button>
     <h2 id="risultato"></h2>
     <h2 id="stop"></h2>
     <h2> I numeri giusti sono : <span id="risultato1"></span></h2>

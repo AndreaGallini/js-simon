@@ -8,3 +8,15 @@
     text-transform: uppercase;
     color: red;
 }
+.center{
+    text-align: center;
+}
+.my-margin{
+    margin: 20px 0;
+}
+.my-font{
+    font-size: 25px;
+}
+.my-input{
+    width: 300px;
+}
