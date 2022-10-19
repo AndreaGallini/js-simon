@@ -22,6 +22,7 @@ while(numeri.length < numeriDaCreare){
     }
 
 }
+console.log(numeri)
 pHtml.innerText=(numeri)
 
 function clear (){
@@ -31,38 +32,30 @@ setTimeout(clear , 3000)
 function inserisci(){
 
 
-    let NumUtente = numUtenteHtml.value;
+    let NumUtente = parseInt(numUtenteHtml.value);
 if(numeriUtenteInseriti.length == numeri.length){
     stop.innerText = 'Hai inserito tutti i numeri disponibili.'
     stop.classList.add('stop')
 }else{
     numeriUtenteInseriti.push(NumUtente);
 }
-let check = false
-for(let i = 0; i < numeri.length; i++){
-    if( NumUtente == numeri[i]){
-        pHtml.innerHTML = 'Incluso'
-        pHtml.classList.add('verde')
-        check = true
-        
-    }else{
-        pHtml.innerHTML = 'Non incluso'
-        pHtml.classList.add('rosso')
-        pHtml.classList.remove('verde')
-        check = false;
-    }
 
-
-
-}
-
-if(check){
+if(numeri.includes(NumUtente)){
     numeriInclusi.push(NumUtente)
+    pHtml.innerHTML = 'Incluso'
+    pHtml.classList.add('verde')
 }else{
     nonInclusi.push(NumUtente)
+    pHtml.innerHTML = 'Non incluso'
+    pHtml.classList.add('rosso')
+    pHtml.classList.remove('verde')
 }
 
-console.log(check)
+if(numeriInclusi.length > 4 || nonInclusi.length > 4){
+    btn.removeEventListener('click',inserisci)
+}
+
+
 console.log(numeriInclusi, nonInclusi)
 //console.log(nonInclusi)
 risultato.innerHTML = numeriUtenteInseriti
