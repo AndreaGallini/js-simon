@@ -28,9 +28,8 @@ pHtml.innerText=(numeri)
 function clear (){
     pHtml.innerText = ''
 }
-setTimeout(clear , 3000)
+setTimeout(clear , 10000)
 function inserisci(){
-
 
     let NumUtente = parseInt(numUtenteHtml.value);
 if(numeriUtenteInseriti.length == numeri.length){
@@ -38,6 +37,7 @@ if(numeriUtenteInseriti.length == numeri.length){
     stop.classList.add('stop')
 }else{
     numeriUtenteInseriti.push(NumUtente);
+    numUtenteHtml.value = '';
 }
 
 if(numeri.includes(NumUtente)){
@@ -50,7 +50,9 @@ if(numeri.includes(NumUtente)){
     pHtml.classList.add('rosso')
     pHtml.classList.remove('verde')
 }
-
+if(numeri == numeriInclusi){
+    console.log('hai vinto')
+}
 if(numeriInclusi.length > 4 || nonInclusi.length > 4){
     btn.removeEventListener('click',inserisci)
 }
